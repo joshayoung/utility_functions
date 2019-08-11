@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/joshayoung/utility_functions/issues"
   },
-  "homepage": "https://github.com/joshayoung/utility_functions#readme"
+  "homepage": "https://github.com/joshayoung/utility_functions#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
 }
