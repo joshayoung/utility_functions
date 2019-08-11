@@ -1,3 +1,11 @@
+let elementExists = function(div) {
+  let element = document.querySelector(div);
+  if (typeof(element) != 'undefined' && element != null) {
+    return true;
+  }
+  return false;
+};
+
 let trim = function(str) {
   //Adopted from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
   return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
@@ -22,15 +30,15 @@ let isIE = (function() {
 }());
 
 let theId = function(id) {
-  if (!document.getElementById(id)) { 
-    return false; 
+  if (!document.getElementById(id)) {
+    return false;
   }
   return document.getElementById(id);
 }
 
 let theClass = function(cls) {
-  if (!document.getElementsByClassName(cls)) { 
-    return false; 
+  if (!document.getElementsByClassName(cls)) {
+    return false;
   }
   return document.getElementsByClassName(cls);
 }
