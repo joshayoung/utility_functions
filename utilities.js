@@ -1,4 +1,4 @@
-const utilities = {
+export const utilities = {
   elementExists: function(div) {
     let element = document.querySelector(div);
     if (typeof(element) != 'undefined' && element != null) {
@@ -44,5 +44,3 @@ const utilities = {
     return document.getElementsByClassName(cls);
   }
 }
-
-module.exports = utilities;
