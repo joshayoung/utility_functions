@@ -1,4 +1,4 @@
-const utilities = require('./utilities');
+import { utilities } from './utilities';
 
 describe('isNumber', () => {
   test('returns true when a number is passed in', () => {
