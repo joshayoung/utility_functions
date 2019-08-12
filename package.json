@@ -2,7 +2,7 @@
   "name": "utility_functions",
   "version": "1.0.0",
   "description": "#### To Do: * Add unit tests for these functions.",
-  "main": "javascript.js",
+  "main": "utilities.js",
   "scripts": {
     "test": "jest"
   },
