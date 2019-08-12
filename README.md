@@ -9,6 +9,12 @@
   * `yarn add --dev jest`
 * Install Babel:
   * `yarn add @babel/present-env --dev`
+* Add `.babelrc` file with this content:
+  * ```
+     {
+        presets: ['@babel/preset-env']
+     }
+    ```
 
 #### To Do:
 * Add unit tests for these functions.
