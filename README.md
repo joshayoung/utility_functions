@@ -17,6 +17,7 @@
     ```
 * Add 'watch' command to yarn scripts:
    * `jest --watchAll`
+*Add 'yarn-error.log' to `.gitignore` file.
 
 #### To Do:
 * Add unit tests for these functions.
