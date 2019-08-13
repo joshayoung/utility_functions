@@ -15,6 +15,8 @@
         presets: ['@babel/preset-env']
      }
     ```
+* Add 'watch' command to yarn scripts:
+   * `jest --watchAll`
 
 #### To Do:
 * Add unit tests for these functions.

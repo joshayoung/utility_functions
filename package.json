@@ -4,7 +4,8 @@
   "description": "#### To Do: * Add unit tests for these functions.",
   "main": "utilities.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
