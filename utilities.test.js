@@ -55,3 +55,15 @@ describe('isIE', () => {
     expect(document.getElementsByTagName('body')[0].className).toMatch(/ie/);
   });
 });
+
+describe('theId', () => {
+  test('returns false if the element does not exist on the page', () => {
+    document.body.innerHTML = '<div><div id="the_element"></div></div>';
+    expect(utilities.theId("my_element")).toBe(false);
+  });
+
+  test('returns the element if it exists', () => {
+    document.body.innerHTML = '<div><div id="the_element">test value</div></div>';
+    expect(utilities.theId("the_element").innerHTML).toEqual('test value');
+  });
+});
