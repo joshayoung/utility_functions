@@ -39,3 +39,19 @@ describe('isNumber', () => {
     expect(utilities.isNumber("a")).toBe(false);
   });
 });
+
+describe('isIE', () => {
+  xtest('sets "ie" class on the body if the browser is "ie"', () => {
+    Object.defineProperty(window.navigator, 'userAgent', {
+      value: "Internet Explorer 11",
+      writable: true
+    });
+
+    //window.navigator.userAgent = "Internet Explorer 11"
+    document.body.innerHTML = '<body></body>';
+
+    utilities.isIE;
+
+    expect(document.getElementsByTagName('body')[0].className).toMatch(/ie/);
+  });
+});
