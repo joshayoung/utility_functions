@@ -67,3 +67,23 @@ describe('theId', () => {
     expect(utilities.theId("the_element").innerHTML).toEqual('test value');
   });
 });
+
+describe('theClass', () => {
+  test('returns false if the element does not exist on the page', () => {
+    document.body.innerHTML = '<div><div class="the_class">class value</div></div>';
+    expect(utilities.theClass("the_class").innerHTML).toEqual('class value');
+  });
+
+  test('returns element if it exists', () => {
+    document.body.innerHTML = '<div><div class="the_class">class value</div></div>';
+    expect(utilities.theClass("the_class").innerHTML).toEqual('class value');
+  });
+
+  test('returns the first element if two have the same class', () => {
+    document.body.innerHTML = `<div>
+      <div class="the_class">class value</div>
+      <div class="the_class">class value 2</div>
+    </div>`;
+    expect(utilities.theClass("the_class").innerHTML).toEqual('class value');
+  });
+});

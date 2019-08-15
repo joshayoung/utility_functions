@@ -23,7 +23,6 @@ export const utilities = {
   //Adopted from: https://codepen.io/gapcode/pen/vEJNZN:
   isIE: (function() {
     var ua = window.navigator.userAgent;
-    debugger;
     var rv = ua.indexOf('rv:');
     var ie = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
     if (ie == 11) {
@@ -42,6 +41,6 @@ export const utilities = {
     if (!document.getElementsByClassName(cls)) {
       return false;
     }
-    return document.getElementsByClassName(cls);
+    return document.getElementsByClassName(cls)[0];
   }
 }
