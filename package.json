@@ -20,6 +20,7 @@
   "homepage": "https://github.com/joshayoung/utility_functions#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "jest-fetch-mock": "^2.1.2"
   }
 }
