@@ -7,6 +7,12 @@
     "test": "jest",
     "watch": "jest --watchAll"
   },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joshayoung/utility_functions.git"
