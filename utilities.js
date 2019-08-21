@@ -42,5 +42,20 @@ export const utilities = {
       return false;
     }
     return document.getElementsByClassName(cls)[0];
+  },
+
+  //TODO: Write a test for this:
+  queryApi: url => {
+    return fetch(url)
+    .then(response => {
+      return response.json();
+    })
+    .then(results => {
+      if (!Array.isArray(results.all)) {
+        throw new Error('Something failed!')
+      }
+
+      return results;
+    });
   }
 }

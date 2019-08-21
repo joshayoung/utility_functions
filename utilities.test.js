@@ -87,3 +87,19 @@ describe('theClass', () => {
     expect(utilities.theClass("the_class").innerHTML).toEqual('class value');
   });
 });
+
+describe('queryApi', () => {
+  xtest('returns the correct data', () => {
+
+    function handleData(data) {
+      debugger;
+    }
+
+    api_call = utilities.queryApi(
+      'https://cat-fact.herokuapp.com/facts',
+      handleData
+    )
+
+    expect(api_call).toEqual("");
+  });
+});
