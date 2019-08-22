@@ -22,7 +22,6 @@
 
 #### To Do:
 * Add unit tests for these functions.
-* Add 'fetch mock' package
 
 #### Debugging:
 * Install the 'Jest' VS Code [plugin](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest).
