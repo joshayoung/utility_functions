@@ -89,17 +89,36 @@ describe('theClass', () => {
 });
 
 describe('queryApi', () => {
-  xtest('returns the correct data', () => {
+  beforeEach(() => {
+    fetch.resetMocks()
+  });
+  test('returns the correct data', () => {
+    fetch.mockResponseOnce(JSON.stringify( [ { data: '12345' } ] ))
+    const queryResponse = jest.fn();
+    const queryError = jest.fn();
 
-    function handleData(data) {
-      debugger;
-    }
+    return utilities.queryApi('www.example.com')
+      .then(queryResponse)
+      .catch(queryError)
+      .finally(() => {
+        expect(queryResponse).toHaveBeenCalled();
+        expect(queryError).not.toHaveBeenCalled();
+        expect(queryResponse.mock.calls[0][0][0]).toEqual({ data: '12345' })
+      });
+  });
 
-    api_call = utilities.queryApi(
-      'https://cat-fact.herokuapp.com/facts',
-      handleData
-    )
+  test('throws an error when the response is not a valid data structure', () => {
+    fetch.mockResponseOnce(JSON.stringify( {} ))
+    const queryResponse = jest.fn();
+    const queryError = jest.fn();
 
-    expect(api_call).toEqual("");
+    return utilities.queryApi('www.example.com')
+      .then(queryResponse)
+      .catch(queryError)
+      .finally(() => {
+        expect(queryResponse).not.toHaveBeenCalled();
+        expect(queryError).toHaveBeenCalled();
+        expect(queryError.mock.calls[0][0].message).toEqual('Something failed!');
+      });
   });
 });

@@ -50,12 +50,11 @@ export const utilities = {
     .then(response => {
       return response.json();
     })
-    .then(results => {
-      if (!Array.isArray(results.all)) {
+    .then(response => {
+      if (!Array.isArray(response)) {
         throw new Error('Something failed!')
       }
-
-      return results;
+      return response;
     });
   }
 }
